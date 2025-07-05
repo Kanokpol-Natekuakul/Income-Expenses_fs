@@ -1,0 +1,276 @@
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.transaction-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.transaction-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.transaction-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.transaction-description {
+  font-weight: 400;
+  color: #374151;
+}
+
+.transaction-amount {
+  font-size: 1.125rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.transaction-details {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.transaction-date,
+.transaction-payment {
+  font-size: 0.875rem;
+  color: #374151;
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.transaction-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  background: white;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+}
+
+.transaction-type.income {
+  border-color: #059669;
+  color: #059669;
+}
+
+.transaction-type.expense {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.edit-button,
+.delete-button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  opacity: 0.8;
+}
+
+.edit-button:hover {
+  background: #f3f4f6;
+  opacity: 1;
+}
+
+.delete-button:hover {
+  background: #fee2e2;
+  opacity: 1;
+}
+
+/* Edit Mode Styles */
+.transaction-item.editing {
+  padding: 20px;
+  background: #f8fafc;
+  border: 2px solid #3b82f6;
+}
+
+.edit-form {
+  width: 100%;
+}
+
+.edit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.edit-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-group label {
+  margin-bottom: 6px;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.edit-group input,
+.edit-group select {
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  /* color: #1f2937; */
+  transition: all 0.2s;
+}
+
+.edit-group input:focus,
+.edit-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.type-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.type-button {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #1f2937;
+}
+
+.type-button:hover {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+}
+
+.type-button.active {
+  border-color: #3b82f6;
+  background-color: #3b82f6;
+  color: white;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.save-button,
+.cancel-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-button {
+  background: #2563eb;
+  color: white;
+}
+
+.save-button:hover {
+  background: #1d4ed8;
+}
+
+.cancel-button {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.cancel-button:hover {
+  background: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .transaction-item {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .transaction-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .transaction-amount {
+    margin-left: 0;
+  }
+  
+  .transaction-details {
+    gap: 8px;
+  }
+  
+  .edit-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .type-buttons {
+    flex-direction: column;
+  }
+  
+  .edit-actions {
+    flex-direction: column;
+  }
+  
+  .save-button,
+  .cancel-button {
+    width: 100%;
+  }
+} 

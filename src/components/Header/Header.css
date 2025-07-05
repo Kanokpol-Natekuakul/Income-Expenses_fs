@@ -1,0 +1,108 @@
+.label-header {
+    text-align: start;
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-right: 10px;
+}
+
+.container-header {
+    display: flex;
+    justify-content: center;
+}
+
+.select-header {
+    border: #000000 3px solid;
+    font-size: 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.header-container {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: left;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.year-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.year-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.year-select {
+  padding: 8px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: white;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.year-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.year-select:hover {
+  border-color: #3b82f6;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .header-title {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .year-filter {
+    width: 100%;
+    justify-content: center;
+  }
+}
